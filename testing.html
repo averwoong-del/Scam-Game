@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scam Detection Game</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f0f0f0; }
+        .game-container { background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); max-width: 600px; margin: 0 auto; }
+        h2 { text-align: center; }
+        .question { font-size: 18px; margin-bottom: 20px; }
+        .answer-button { display: block; width: 100%; padding: 10px; margin: 10px 0; font-size: 16px; border: none; cursor: pointer; }
+        .correct { background-color: #28a745; color: #fff; }
+        .incorrect { background-color: #dc3545; color: #fff; }
+        .feedback { text-align: center; font-size: 18px; padding: 10px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h2>Scam Detection Game</h2>
+        <p class="question">Is this message a scam? "Congratulations, you have won a $500 gift card! Click here to claim."</p>
+        <button class="answer-button correct" onclick="checkAnswer(true)">Yes, it's a scam!</button>
+        <button class="answer-button incorrect" onclick="checkAnswer(false)">No, it's safe.</button>
+        <div class="feedback" id="feedback"></div>
+    </div>
+
+    <script>
+        function checkAnswer(isScam) {
+            var feedback = document.getElementById('feedback');
+            if (isScam) {
+                feedback.textContent = "Correct! This is a scam. Always verify offers before clicking.";
+                feedback.style.color = "green";
+            } else {
+                feedback.textContent = "Oops! This is a scam. Always verify offers before clicking.";
+                feedback.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
